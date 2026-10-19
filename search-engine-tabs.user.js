@@ -4,7 +4,8 @@
 // @namespace    https://github.com/bingoup886/search-engine-tabs
 // @homepageURL  https://github.com/bingoup886/search-engine-tabs
 // @supportURL   https://github.com/bingoup886/search-engine-tabs/issues
-// @version      1.0.0
+// @version      1.0.1
+// @author       balabla
 // @description  在 Google、Bing、百度和 DuckDuckGo 顶部显示大 Tab，切换时保留搜索词。
 // @description:en Switch between Google, Bing, Baidu and DuckDuckGo while keeping your search query.
 // @match        https://www.google.com/search*
@@ -56,6 +57,7 @@
   const links = engines.map(engine => {
     const link = document.createElement('a');
     link.textContent = engine.name;
+    link.rel = 'noreferrer noopener';
     if (engine === current) link.setAttribute('aria-current', 'page');
     nav.append(link);
     return link;
